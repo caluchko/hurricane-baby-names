@@ -1,9 +1,12 @@
 # plot hurricane name diff vs fatalities
+# excludes hurricane katrina
+# to include katrina use 'hurricanes' in place of 'hurricanes2'
+# need to source 'babycanes.R' before running this script
 
 library(ggplot2)
 hurricanes2 <- filter(hurricanes, Name != "Katrina")
 
-p1 <- ggplot(hurricanes2, aes(x = alldeaths, y = diff))+
+p1 <- ggplot(hurricanes2, aes(x = alldeaths, y = dif))+
   geom_point(colour = "blue", alpha = .5, size = 3)+
   geom_rug(size = .3)+
   stat_smooth(method = lm, colour = "steelblue")+
@@ -13,8 +16,9 @@ p1 <- ggplot(hurricanes2, aes(x = alldeaths, y = diff))+
   annotate("text", x = 256, y = -45, label = "Camille", size = 4)+
   annotate("text", x = 200, y = -15, label = "Dianne", size = 4)+
   annotate("text", x = 159, y = -36, label = "Sandy", size = 4)+
-  annotate("text", x = 1833, y = -55, label = "Katrina", size = 4)+
+  #annotate("text", x = 1833, y = -55, label = "Katrina", size = 4)+
   geom_hline(yintercept = 0, color = "darkgray")+
   theme_bw()
 
+# makes the same plot with a different facet for M and F  
   p2 <- p1 + facet_wrap(~ Gender_MF)
