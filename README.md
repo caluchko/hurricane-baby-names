@@ -11,6 +11,6 @@
 ====================
 #### Code: 
 
-#### 1. `babyname.R` - to be posted shortly
-#### 2. `babycanes.R` - to be posted shortly
+#### 1. `babyname.R` - defines two funtions. 1) `name_ts` - generates a time series plot of usage of a particular baby name using the `babynames` package. 2) name_rank - returns the rank of a particular baby name in a specified year.
+#### 2. `babycanes.R` - calculates the change in baby name usage before and after each hurricane in the `hurricanes.csv` data set. Calculates the difference (after - before) for each name.
 #### 3. `diff.vs.fatalities.R` - plots the change in baby name usage vs the fatalities for each hurricane in the hurricane dataset. Also plots linear regression line and 95% confidence area.
